@@ -304,7 +304,7 @@ t_list				*ft_lstnew(void *content);
  * @param lst  dirección de un puntero al primer nodo de una lista.
  * @param new  un puntero al nodo que añadir al principio de la lista.
  */
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *newNode);
 
 /**
  * Cuenta el número de nodos de una lista.
@@ -327,7 +327,7 @@ t_list				*ft_lstlast(t_list *lst);
  * @param lst  dirección de un puntero al primer nodo de una lista.
  * @param new  un puntero al nodo que añadir al final de la lista.
 */
-void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *newNode);
 
 /**
  * ft_lstdelone
