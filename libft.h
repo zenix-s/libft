@@ -14,15 +14,21 @@
 # define LIBFT_H
 
 # include <limits.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdint.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef enum s_bool
+{
+	FALSE,
+	TRUE
+}					t_bool;
 
 /**
  * Comprueba si un caracter es alfanumerico
@@ -215,7 +221,7 @@ void				*ft_calloc(size_t count, size_t len);
 /**
  * Reserva (con malloc(3)) y devuelve una substring de la string ’s’.
 
-	* La substring empieza desde ’start’ y tiene una longitud máxima ’len’
+		* La substring empieza desde ’start’ y tiene una longitud máxima ’len’
  * @param str
  * @param start
  * @param len
@@ -271,7 +277,7 @@ char				*ft_itoa(int num);
  * @param str Cadena sobre la que aplicar la función
  * @param f Función a aplicar
  * @return Cadena resultante
-*/
+ */
 char				*ft_strmapi(const char *str, char (*f)(unsigned int, char));
 
 /**
@@ -279,7 +285,7 @@ char				*ft_strmapi(const char *str, char (*f)(unsigned int, char));
  * Aplica la función ’f’ a cada caracter de la cadena ’str’
  * @param str Cadena sobre la que aplicar la función
  * @param f Función a aplicar
-*/
+ */
 void				ft_striteri(char *str, void (*f)(unsigned int, char *));
 
 void				ft_putchar_fd(char chr, int fd);
@@ -318,7 +324,7 @@ int					ft_lstsize(t_list *lst);
  * Devuelve el último nodo de la lista.
  * @param lst  inicio de la lista.
  * @return último nodo de la lista.
-*/
+ */
 t_list				*ft_lstlast(t_list *lst);
 
 /**
@@ -326,7 +332,7 @@ t_list				*ft_lstlast(t_list *lst);
  * Añade el nodo ’new’ al final de la lista.
  * @param lst  dirección de un puntero al primer nodo de una lista.
  * @param new  un puntero al nodo que añadir al final de la lista.
-*/
+ */
 void				ft_lstadd_back(t_list **lst, t_list *newNode);
 
 /**
@@ -335,7 +341,7 @@ void				ft_lstadd_back(t_list **lst, t_list *newNode);
  * utilizando la función ’del’ y después libera el nodo.
  * @param lst  dirección de un puntero al nodo que hay que liberar.
  * @param del  función que permite liberar el contenido
-*/
+ */
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 
 /**
@@ -343,7 +349,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
  * Libera la memoria de ’lst’ y de todos sus nodos.
  * @param lst  dirección de un puntero al primer nodo de la lista a liberar.
  * @param del  función que permite liberar el contenido de un nodo.
-*/
+ */
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 
 /**
@@ -351,7 +357,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
  * Itera sobre la lista ’lst’ y aplica la función ’f’
  * @param lst  dirección de un puntero al primer nodo de una lista.
  * @param f  dirección de la función que hay que aplicar.
-*/
+ */
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 /**
@@ -361,7 +367,7 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
  * @param lst  dirección de un puntero al primer nodo de una lista.
  * @param f  función que hay que aplicar.
  * @return nueva lista.
-*/
+ */
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
