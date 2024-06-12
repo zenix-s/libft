@@ -1,39 +1,28 @@
-# DIRECTORIES
+# # DIRECTORIES
 SRCP = ./src/
-
-SRCS = $(notdir $(wildcard $(SRCP)*.c))
-
-SRC = $(addprefix $(SRCP), $(SRCS))
-
+SRC = $(wildcard $(SRCP)**/*.c)
 OBJ = $(SRC:.c=.o)
 
 
 # VARIABLES
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 NAME = libft.a
-LIB = ranlib
 RM = rm -f
 
 # RULES
 
-# @$(CC) $(CFLAGS) -c  $< -o $@
 $(OBJ): %.o: %.c
 	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
-	@$(LIB) $(NAME)
 	@echo "libft.a created"
 
 all: $(NAME)
 
-bonus: $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
-	@$(LIB) $(NAME)
-	@echo "libft.a created"
 
 clean:
 	@$(RM) $(OBJ)
@@ -44,4 +33,5 @@ fclean: clean
 re: fclean all
 
 
-.PHONY: all	clean fclean re
+.PHONY: all clean fclean re
+
