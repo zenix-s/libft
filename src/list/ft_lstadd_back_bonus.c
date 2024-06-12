@@ -6,11 +6,11 @@
 /*   By: serferna <serferna@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 09:27:56 by serferna          #+#    #+#             */
-/*   Updated: 2024/04/22 17:08:35 by serferna         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:02:39 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *newNode)
 {

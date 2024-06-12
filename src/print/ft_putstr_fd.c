@@ -6,11 +6,11 @@
 /*   By: serferna <serferna@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:50:14 by serferna          #+#    #+#             */
-/*   Updated: 2024/06/12 13:57:41 by serferna         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:02:39 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 int ft_putstr_fd(char *str, int fd) {
   if (fd < 0)
