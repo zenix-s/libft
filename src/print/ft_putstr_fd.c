@@ -12,10 +12,11 @@
 
 #include "../../libft.h"
 
-int ft_putstr_fd(char *str, int fd) {
-  if (fd < 0)
-    return (0);
-  if (!str)
-    return (write(fd, "(null)", 6));
-  return (write(fd, str, ft_strlen(str)));
+int	ft_putstr_fd(char *str, int fd)
+{
+	if (fd < 0)
+		return (0);
+	if (!str)
+		return (write(fd, "(null)", 6));
+	return (write(fd, str, ft_strlen(str)));
 }
