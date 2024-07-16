@@ -9,7 +9,6 @@
 /*   Updated: 2024/06/12 14:02:41 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -130,5 +129,9 @@ void				ft_putendl_fd(char *str, int fd);
 void				ft_putnbr_fd(int num, int fd);
 
 int					ft_printf(const char *format, ...);
+
+// GNL
+
+char				*get_next_line(int fd);
 
 #endif

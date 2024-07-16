@@ -14,15 +14,6 @@
 
 #define BUFFER_SIZE 10
 
-/**
- * @name get_line_leave_rest
- * This function divides the text into two parts,
-	the first part is the text until the first '\n' character
- * and the second part is the rest of the text.
- * @param text Is a pointer to the text that will be divided,
-	it will be modified to contain the rest of the text.
- * @return The first part of the text until the first '\n' character.
- */
 static char	*extract_line(char **text)
 {
 	int		i;
@@ -45,13 +36,6 @@ static char	*extract_line(char **text)
 	return (line);
 }
 
-/**
- * @name read_file
- * This function reads the file and stores the text in a buffer.
- * @param fd File descriptor.
- * @param text The text previously read, and not returned due to being after '\n'.
- * @return The text read from the file that contains the first '\n' character, or the whole text if there is no '\n' EOF(End Of File).
-*/
 static char	*read_file(int fd, char *text)
 {
 	char	buffer[BUFFER_SIZE + 1];
