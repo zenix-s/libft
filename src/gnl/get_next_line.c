@@ -61,8 +61,6 @@ static char	*read_file(int fd, char *text)
 int	get_next_line(int fd, char **line)
 {
 	static char	*text;
-	char		*tmp;
-	int			bytes_read;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || line == NULL)
 		return (-1);
