@@ -58,26 +58,31 @@ static char	*read_file(int fd, char *text)
 	return (text);
 }
 
-char	*get_next_line(int fd)
+int	get_next_line(int fd, char **line)
 {
 	static char	*text;
-	char		*line;
+	char		*tmp;
+	int			bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+	if (fd < 0 || BUFFER_SIZE <= 0 || line == NULL)
+		return (-1);
+	*line = NULL;
 	if (text == NULL)
 		text = ft_strdup("");
 	if (text == NULL)
-		return (NULL);
+		return (-1);
 	text = read_file(fd, text);
 	if (text == NULL)
-		return (NULL);
+		return (-1);
 	if (ft_strchr(text, '\n') == NULL)
 	{
-		line = ft_strdup(text);
-		if (line == NULL)
-			return (free(text), text = NULL, NULL);
-		return (free(text), text = NULL, line);
+		*line = ft_strdup(text);
+		if (*line == NULL)
+			return (free(text), text = NULL, -1);
+		return (free(text), text = NULL, 0);
 	}
-	return (extract_line(&text));
+	*line = extract_line(&text);
+	if (*line == NULL)
+		return (-1);
+	return (ft_strlen(*line));
 }

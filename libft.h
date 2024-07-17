@@ -132,6 +132,6 @@ int					ft_printf(const char *format, ...);
 
 // GNL
 
-char				*get_next_line(int fd);
+int					get_next_line(int fd, char **line);
 
 #endif
